@@ -1,25 +1,19 @@
 import Stage from "./Stage"
+import matches from "./TestData"
 export default function Bracket(){
-    var spacing = {
+    const params = {
+        margin: {
+            top: 20,
+            right: 20,
+            bottom: 20,
+            left: 20
+        },
         playerHeight: 25,
-        playerWidth: 160,
-        scoreSpace: 5,
-        gameSpace: 20 
+        playerSeperation: 5,
+        gameSeperation: 20
     }
 
-    spacing = {
-        ...spacing,
-        playerSpace: spacing.playerHeight+spacing.scoreSpace,
-    }
 
-    spacing = {
-        ...spacing,
-        gameTop: (spacing.playerHeight*2)+spacing.scoreSpace+spacing.gameSpace
-    }
-
-    const gameStages = [0,1,2,3]
-    const nGamess = [8,4,2,1]
-    const stages = []
     for (let j=0; j<4; j++){
         stages.push(
             <Stage
