@@ -1,10 +1,10 @@
 import Player from "./Player"
-export default function Game({spacing}){
-
+export default function Game({params, match}){
+    const playerSpace = params.playerHeight+params.playerSeperation
     return (
-        <g transform={`translate(0, ${spacing.gameTop})`}>
-            <Player spacing={{...spacing, playerSpace:0}}/>
-            <Player spacing={spacing}/>
+        <g transform={`translate(0, ${params.gameTop})`}>
+            <Player params={{...params, playerSpace:0}} match={match}/>
+            <Player params={{...params, playerSpace:playerSpace}} match={match}/>
         </g>
     )
 }

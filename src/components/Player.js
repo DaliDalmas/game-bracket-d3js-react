@@ -1,26 +1,23 @@
 import './Player.css'
-export default function Player({spacing}){
+export default function Player({params}){
     const colors = {
         primary: '#c4c4c4',
         secondary: '#ef06a1',
        
     }
-    const params = {
-        playerFontSize:15,
-        scoreFontSize:15
-    }
+
     return (
-        <g transform={`translate(${0},${spacing.playerSpace})`}>
+        <g transform={`translate(${0},${params.playerSpace})`}>
             <g>
                 <rect
                     x={0}
                     y={0}
-                    height={spacing.playerHeight}
-                    width={spacing.playerWidth}
+                    height={params.playerHeight}
+                    width={params.playerWidth}
                     fill={colors.primary}>
                 </rect>
                 <text
-                    x={spacing.playerHeight+8}
+                    x={params.playerHeight+8}
                     y="19"
                     fontFamily="Verdana"
                     fontSize={params.playerFontSize}
@@ -30,23 +27,23 @@ export default function Player({spacing}){
                 </text>
                 <image
                     href="https://picsum.photos/200"
-                    height={spacing.playerHeight-4}
-                    width={spacing.playerHeight-4}
+                    height={params.playerHeight-4}
+                    width={params.playerHeight-4}
                     clipPath="inset(0% round 15px)"
                     transform='translate(4,2)'
                     />
             </g>
             <g>
                 <rect
-                    x={spacing.playerWidth+spacing.scoreSpace}
+                    x={params.playerWidth+params.scoreSpace}
                     y={0}
-                    height={spacing.playerHeight}
-                    width={spacing.playerHeight}
+                    height={params.playerHeight}
+                    width={params.playerHeight}
                     fill={colors.secondary}
                     stroke={colors.primary}>
                 </rect>
                 <text
-                    x={spacing.playerWidth+spacing.scoreSpace+2}
+                    x={params.playerWidth+params.scoreSpace+2}
                     y="19"
                     fontFamily="Verdana"
                     fontSize={params.scoreFontSize}
